@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+.contact {
+padding: 50px 0;
+background-color: #f9f9f9;
+}
+.contact .content {
+text-align: center;
+margin-bottom: 30px;
+}
+.contact h2 {
+font-size: 2.5rem;
+font-weight: bold;
+}
+.contact p {
+font-size: 1rem;
+color: #555;
+}
+.contactInfo {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+gap: 30px;
+}
+.contactInfo .box {
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(248, 248, 248, 0.1);
+width: 300px;
+margin: 20px;
+padding: 20px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contactInfo .box .icon {
+font-size: 3rem;
+color: #007bff;
+margin-bottom: 20px;
+transition: transform 0.3s ease;
+}
+.contactInfo .box .text h3 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+.contactInfo .box .text p {
+font-size: 1rem;
+color: #555;
+}
+.contactInfo .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+.contactInfo .box button {
+margin-top: auto;
+padding: 10px 20px;
+background-color: #000000;
+color: rgb(255, 255, 255);
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+.contactInfo .box button:hover {
+background-color: #837474;
+}
+
+      
+@keyframes shake {
+0% { transform: translateX(0); }
+25% { transform: translateX(-5px); }
+50% { transform: translateX(5px); }
+75% { transform: translateX(-5px); }
+100% { transform: translateX(0); }
+}
+.contactInfo .box .icon.shake {
+animation: shake 0.5s ease-in-out;
+animation-iteration-count: 1;
+}
+.navbar {
+            background-color: rgba(13, 13, 14, 0.8); 
+        }
+        .navbar-nav .nav-link {
+            color: white; 
+            transition: color 0.3s; 
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00; 
+        }
+.custom-toggler {
+    border: 2px solid transparent; 
+    border-radius: 5px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 10px; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+.custom-toggler:hover {
+    border: 2px solid #ffcc00; 
+    background-color: rgba(255, 204, 0, 0.2);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: none; 
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000000; 
+    position: relative;
+}
+.custom-toggler .navbar-toggler-icon::before,
+.custom-toggler .navbar-toggler-icon::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.custom-toggler .navbar-toggler-icon::before {
+    top: -8px; 
+    }
+.custom-toggler .navbar-toggler-icon::after {
+    top: 8px; 
+}
+</style>
+</head>
+<body>
+    
+    <!-- navbarnya -->
+<script src="../js/bootstrap.bundle.js"></script>
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">Kontak</a>         
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../Daftar.html">Barang</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="Kritik&Saran.html">Kritik dan Saran</a>
+    </li>
+    </ul>
+</div>
+</div>
+</nav>
+<section class="contact">
+    <div class="content">
+    <h2>Kontak Kami</h2>
+    <p>Silakan hubungi kami melalui informasi berikut</p>
+    </div>
+<div class="container">
+    <div class="contactInfo">              
+<div class="box">
+    <div class="icon">
+    <a href="https://www.google.com/maps?q=Jl.+Ikan+Sepat,+Lowokwaru" target="_blank">
+<i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+</a>
+</div>
+    <div class="text">
+    <h3>Alamat</h3>
+    <p>Jl. Ikan Sepat, Lowokwaru</p>
+    </div>
+    </div>                                
+<div class="box">
+    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+    <div class="text">
+    <h3>Telepon</h3>
+    <p>+62 873 0942 0978</p>
+    </div>
+</div>                
+<div class="box">
+    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+    <div class="text">
+    <h3>Email</h3>
+    <p>SMK2Pemalang@email.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+<script type="text/javascript">
+  const icons = document.querySelectorAll('.contactInfo .box .icon');
+  icons.forEach(icon => {           
+  icon.addEventListener('mouseenter', () => {
+  icon.classList.add('shake');
+  });           
+   icon.addEventListener('animationend', () => {
+    icon.classList.remove('shake');
+   });
+ });
+   </script>
+  </body>
+</html>

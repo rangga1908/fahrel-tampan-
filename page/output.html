@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Peminjaman</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .print-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .print-btn:hover {
+            background: #218838;
+        }
+
+        /* untuk print */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            .print-btn, button {
+                display: none; 
+            }
+            section {
+                box-shadow: none;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="Form-section" id="contact">
+        <fieldset>
+            <h2>Data Peminjaman</h2>
+            <div id="output"></div>
+            <button onclick="window.location.href='../Daftar.html'">Lanjut</button>
+            <button onclick="window.location.href='../Daftar.html'">Kembali</button>
+            <!-- Print Button -->
+            <button class="print-btn" onclick="window.print()">Cetak Halaman</button>
+        </fieldset>
+    </section>
+    
+    <script>
+        const Nama = localStorage.getItem('Nama') || "Data tidak tersedia";
+        const NamaPetugas = localStorage.getItem('NamaPetugas') || "Data tidak tersedia";
+        const pilihJurusan = localStorage.getItem('pilihJurusan') || "Data tidak tersedia";
+        const pilihKelas = localStorage.getItem('pilihKelas') || "Data tidak tersedia";
+        const NoHp = localStorage.getItem('NoHp') || "Data tidak tersedia";
+        const nik = localStorage.getItem('nik') || "Data tidak tersedia";
+        const namaBarang = localStorage.getItem('namaBarang') || "Data tidak tersedia";
+        const jenisbarang = localStorage.getItem('jenisbarang') || "Data tidak tersedia";
+        const jumlahBarang = localStorage.getItem('jumlahBarang') || "Data tidak tersedia";
+        const JenisKelamin = localStorage.getItem('JenisKelamin') || "Data tidak tersedia";
+        const jamPeminjaman = localStorage.getItem('jamPeminjaman') || "Data tidak tersedia";
+        const jamPengembalian = localStorage.getItem('jamPengembalian') || "Data tidak tersedia";
+        const matapelajaran = localStorage.getItem('matapelajaran') || "Data tidak tersedia";
+        
+        document.getElementById('output').innerHTML = `
+            <p><strong>Nama:</strong> ${Nama}</p>
+            <p><strong>Nama Petugas:</strong> ${NamaPetugas}</p>
+            <p><strong>Jurusan:</strong> ${pilihJurusan}</p>
+            <p><strong>Kelas:</strong> ${pilihKelas}</p>
+            <p><strong>No HP:</strong> ${NoHp}</p>
+            <p><strong>NIK:</strong> ${nik}</p>
+            <p><strong>Nama Barang:</strong> ${namaBarang}</p>
+            <p><strong>Jenis Barang:</strong> ${jenisbarang}</p>
+            <p><strong>Jumlah Barang:</strong> ${jumlahBarang}</p>
+            <p><strong>Jenis Kelamin:</strong> ${JenisKelamin}</p>
+            <p><strong>Jam Peminjaman:</strong> ${jamPeminjaman}</p>
+            <p><strong>Jam Pengembalian:</strong> ${jamPengembalian}</p>
+            <p><strong>Mata Pelajaran:</strong> ${matapelajaran}</p>
+        `;
+    </script>
+</body>
+</html>

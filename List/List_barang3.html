@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Barang</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        .layanan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+            text-align: left;
+        }
+        .layanan-table thead {
+            background-color: #f4f4f4;
+        }
+        .layanan-table th, 
+        .layanan-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .layanan-table th {
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .layanan-table td{
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .layanan-table img {
+            display: block;
+            margin: 0 auto;
+        }
+        .layanan-table a.btn {
+            display: inline-block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+        .layanan-table a.btn:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #000305;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="../Daftar.html">Kembali</a>
+    <section class="layanan-section" id="layanan">
+        <h1>Daftar Barang Perangkat Lunak</h1>
+        <table class="layanan-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Gambar</th>
+                    <th>Nama Barang</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="../asset/yt.webp" alt="Gambar barang 1" width="100"></td>
+                    <td>laptop</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><img src="../asset/Mic-karaoke-Excelvan-K18U.jpg" alt="Gambar barang 2" width="100"></td>
+                    <td>1 Paket Sapu</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><img src="../asset/10_Speaker_Komputer_Terbaik_untuk_Dibeli.jpg" alt="Gambar barang 3" width="100"></td>
+                    <td>Ember</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><img src="../asset/Laser.jpg" alt="Gambar barang 4" width="100"></td>
+                    <td>Meteran</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><img src="../asset/proyektor.JPG" alt="Gambar barang 5" width="100"></td>
+                    <td>Meteran tancap</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><img src="../asset/Layar Tancap.jpg" alt="Gambar barang 5" width="100"></td>
+                    <td>Sabun Lantai</td>
+                    <td><button onclick="window.location.href='../page/index.html'">pesan</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

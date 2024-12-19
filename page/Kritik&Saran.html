@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritik dan Saran</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+            .custom-toggler {
+            border: 2px solid transparent; 
+            border-radius: 5px; 
+            background-color: rgba(255, 255, 255, 0.1); 
+            padding: 10px; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler:hover {
+            border: 2px solid #ffcc00; 
+            background-color: rgba(255, 204, 0, 0.2);
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: none; 
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: #000000; 
+            position: relative;
+        }
+
+        .custom-toggler .navbar-toggler-icon::before,
+        .custom-toggler .navbar-toggler-icon::after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler .navbar-toggler-icon::before {
+            top: -8px; 
+        }
+
+        .custom-toggler .navbar-toggler-icon::after {
+            top: 8px; 
+        }
+        .navbar {
+            background-color: rgba(13, 13, 14, 0.8); 
+        }
+        .navbar-nav .nav-link {
+            color: white; 
+            transition: color 0.3s; 
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00; 
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+        #kritik {
+    display: block !important;
+    visibility: visible !important;
+}
+
+    </style>
+</head>
+<body>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kritik dan Saran</a>
+            
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Daftar.html">Barang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Kontak.html">Kontak Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <form action="https://script.google.com/macros/s/AKfycbzKa5-BxZVJL1agSY7d-S0m438OHsZnXK4P7AYR-Cx7xd8YeNSpW15CN5qsaicKaufD/exec" 
+   method="get" 
+   class="contact-form"
+    name="Kritik-dan-Saran">
+    <h3>Kritik dan Saran</h3>
+    <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="kritik">Kritik dan Saran:</label>
+        <textarea class="form-control" id="kritik" rows="3" name="kritik"></textarea>
+    </div>
+    <br>    
+    <button type="submit">Kirim</button>
+</form>
+    <script>
+       function doPost(e) {
+  var sheet = SpreadsheetApp.openById('AKfycbx3qrC5cip1wVrzSmcRg0TXucA1l_MdV0wYLFqHeyh_eEfIjiVzEg93yDx3BAyWZc7J').getSheetByName('Sheet1'); // Ganti SPREADSHEET_ID dengan ID spreadsheet Anda
+  var data = e.parameter;
+
+  sheet.appendRow([new Date(), data.nama, data.email, data.kritikdansaran]);
+
+  return ContentService.createTextOutput('Success');
+}
+
+    </script>
+</body>
+</html>

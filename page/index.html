@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Inventaris Barang Jurusan</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="../Style.css">
+   <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    td:last-child {
+        text-align: center;
+        width: 150px; 
+    }
+    .h1 {
+       text-align: center;
+    }
+    thead {
+        color: blue;
+    }
+    
+   </style>
+</head>
+<body>
+    <h1 style="margin-left: 40%;">Inventaris Barang Jurusan</h1>
+    <form id="myForm">
+        <fieldset>
+            <h2 style="margin-left: 50%;">Isi Formulir</h2>
+            <label for="Nama">Nama:</label>
+            <input type="text" name="Nama" id="Nama" required><br><br>
+            <label for="NamaPetugas">Nama Petugas:</label>
+            <input type="text" name="NamaPetugas" id="NamaPetugas" required><br><br>
+            <label for="pilihJurusan">Pilih Jurusan:</label>
+            <select name="jurusan" id="pilihJurusan" required>
+                <option value="">Pilih Jurusan</option>
+                <option value="RPL-A">RPL-A</option>
+                <option value="RPL-B">RPL-B</option>
+                <option value="RPL-C">RPL-C</option>
+                <option value="RPL-D">RPL-D</option>
+                <option value="ELIN-A">ELIN-A</option>
+                <option value="ELIN-B">ELIN-B</option>                      
+                <option value="METRO-A">METRO-A</option>
+                <option value="METRO-B">METRO-B</option>
+                <option value="TKJ-A">TKJ-A</option>
+                <option value="TKJ-B">TKJ-B</option>
+                <option value="TKJ-C">TKJ-C</option>
+                <option value="TKJ-D">TKJ-D</option>
+            </select><br><br>
+            <label for="pilihKelas">Pilih Kelas:</label>
+            <select name="kelas" id="pilihKelas" required>
+                <option value="">Pilih Kelas</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+            </select><br><br>
+            <label for="NoHp">No. HP:</label>
+            <input type="text" name="NoHp" id="NoHp" required><br><br>
+            <label for="nik">NIK:</label>
+            <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required><br><br>
+            <label for="namaBarang">Nama Barang yang Dipinjam:</label>
+            <input type="text" name="namaBarang" id="namaBarang" required><br><br>
+            <label for="jenisbarang">Jenis Barang:</label>
+            <select name="jenisbarang" id="jenisbarang" required>
+                <option value="">Pilih Jenis Barang</option>
+                <option value="konduktor">Konduktor</option>
+                <option value="nonkonduktor">Non Konduktor</option>
+                <option value="elektronik">Elektronik</option>
+            </select><br><br>
+            <label for="jumlahBarang">Jumlah Barang yang Dipinjam:</label>
+            <input type="number" name="jumlahBarang" id="jumlahBarang" required><br><br>
+            <label>Jenis Kelamin:</label>
+            <input type="radio" name="jk" value="Laki-laki" required> Laki-laki
+            <input type="radio" name="jk" value="Perempuan" required> Perempuan<br><br>
+            <label for="jamPeminjaman">Jam Peminjaman:</label>
+            <input type="datetime-local" id="jamPeminjaman" required><br><br>
+            <label for="jamPengembalian">Jam Pengembalian:</label>
+            <input type="datetime-local" id="jamPengembalian" required><br><br>
+            <label for="matapelajaran">Mata Pelajaran:</label>
+            <input type="text" id="matapelajaran" required><br><br>
+            <input type="submit" value="Kirim Data" style="margin-left: 50%; margin-top: 0%;">
+            <button type="button" onclick="window.location.href='../Daftar.html'" >Batal</button>
+        </fieldset>
+    </form>
+<h2 style="margin-left: 50%;">Daftar Data</h2>
+<table id="dataTable" border="1">
+<thead>
+    <tr>
+    <th>Nama</th>
+    <th>Nama Petugas</th>
+    <th>Jurusan</th>
+    <th>Kelas</th>
+    <th>No. HP</th>
+    <th>NIK</th>
+    <th>Barang</th>
+    <th>Jenis Barang</th>
+    <th>Jumlah</th>
+    <th>Jenis Kelamin</th>
+    <th>Jam Pinjam</th>
+    <th>Jam Kembali</th>
+    <th>Mata Pelajaran</th>
+    <th>Aksi</th>
+</tr>
+ </thead>
+<tbody></tbody>
+</table>
+<script>
+    const form = document.getElementById('myForm');
+    const tableBody = document.querySelector('#dataTable tbody');
+function loadData() {
+tableBody.innerHTML = '';
+    const data = JSON.parse(localStorage.getItem('inventarisData')) || [];
+        data.forEach((item, index) => {
+            const row = `
+            <tr>
+                <td>${item.Nama}</td>
+                <td>${item.NamaPetugas}</td>
+                <td>${item.jurusan}</td>
+                <td>${item.kelas}</td>
+                <td>${item.NoHp}</td>
+                <td>${item.nik}</td>
+                <td>${item.namaBarang}</td>
+                <td>${item.jenisbarang}</td>
+                <td>${item.jumlahBarang}</td>
+                <td>${item.jk}</td>
+                <td>${item.jamPeminjaman}</td>
+                <td>${item.jamPengembalian}</td>
+                <td>${item.matapelajaran}</td>
+                <td>
+                    <button onclick="editData(${index})">Edit</button>
+                    <button onclick="deleteData(${index})">Hapus</button>
+                    <button onclick="window.location.href='output.html'">Ambil Struk</button>
+                </td>
+                </tr>`;
+tableBody.innerHTML += row;
+});
+}
+function saveData(event) {
+    event.preventDefault();
+    const data = JSON.parse(localStorage.getItem('inventarisData')) || [];
+    const formData = {
+    Nama: form.Nama.value,
+    NamaPetugas: form.NamaPetugas.value,
+    jurusan: form.pilihJurusan.value,
+    kelas: form.pilihKelas.value,
+    NoHp: form.NoHp.value,
+    nik: form.nik.value,
+    namaBarang: form.namaBarang.value,
+    jenisbarang: form.jenisbarang.value,
+    jumlahBarang: form.jumlahBarang.value,
+    jk: form.jk.value,
+    jamPeminjaman: form.jamPeminjaman.value,
+    jamPengembalian: form.jamPengembalian.value,
+    matapelajaran: form.matapelajaran.value,
+};
+ data.push(formData);
+    localStorage.setItem('inventarisData', JSON.stringify(data));
+    loadData(); 
+form.reset(); 
+}
+function editData(index) {
+    const data = JSON.parse(localStorage.getItem('inventarisData'));
+    const item = data[index];
+for (let key in item) {
+if (form[key]) form[key].value = item[key];
+}
+data.splice(index, 1);
+    localStorage.setItem('inventarisData', JSON.stringify(data));
+    loadData();
+}
+function deleteData(index) {
+    const data = JSON.parse(localStorage.getItem('inventarisData'));
+    data.splice(index, 1);
+    localStorage.setItem('inventarisData', JSON.stringify(data));
+    loadData();
+}
+form.addEventListener('submit', saveData);        
+window.addEventListener('load', loadData);
+    </script>
+    <script>
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+            const Nama = document.getElementById('Nama').value;
+            const NamaPetugas = document.getElementById('NamaPetugas').value;
+            const pilihJurusan = document.getElementById('pilihJurusan').value;
+            const pilihKelas = document.getElementById('pilihKelas').value;
+            const NoHp = document.getElementById('NoHp').value;
+            const nik = document.getElementById('nik').value;
+            const namaBarang = document.getElementById('namaBarang').value;
+         const jenisbarang = document.getElementById('jenisbarang').value;
+            const jumlahBarang = document.getElementById('jumlahBarang').value;
+            const JenisKelamin = document.querySelector('input[name="jk"]:checked').value;
+          const jamPeminjaman = document.getElementById('jamPeminjaman').value;
+            const jamPengembalian = document.getElementById('jamPengembalian').value;
+            const matapelajaran = document.getElementById('matapelajaran').value;
+                localStorage.setItem('Nama', Nama);
+            localStorage.setItem('NamaPetugas', NamaPetugas);
+                localStorage.setItem('pilihJurusan', pilihJurusan);
+            localStorage.setItem('pilihKelas', pilihKelas);
+                localStorage.setItem('NoHp', NoHp);
+                localStorage.setItem('nik', nik);
+            localStorage.setItem('namaBarang', namaBarang);
+                localStorage.setItem('jenisbarang', jenisbarang);
+                localStorage.setItem('jumlahBarang', jumlahBarang);
+            localStorage.setItem('JenisKelamin', JenisKelamin);
+                localStorage.setItem('jamPeminjaman', jamPeminjaman);
+                localStorage.setItem('jamPengembalian', jamPengembalian);
+           localStorage.setItem('matapelajaran', matapelajaran);
+                window.location.href = 'output.html';
+            });
+        </script> 
+ <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    const Nama = document.getElementById('Nama').value;
+    const NamaPetugas = document.getElementById('NamaPetugas').value;
+    const pilihJurusan = document.getElementById('pilihJurusan').value;
+    const pilihKelas = document.getElementById('pilihKelas').value;
+    const NoHp = document.getElementById('NoHp').value;
+    const nik = document.getElementById('nik').value;
+    const namaBarang = document.getElementById('namaBarang').value;
+    const jenisbarang = document.getElementById('jenisbarang').value;
+    const jumlahBarang = document.getElementById('jumlahBarang').value;
+    const JenisKelamin = document.querySelector('input[name="jk"]:checked').value;
+    const jamPeminjaman = document.getElementById('jamPeminjaman').value;
+    const jamPengembalian = document.getElementById('jamPengembalian').value;
+    const matapelajaran = document.getElementById('matapelajaran').value;
+        localStorage.setItem('Nama', Nama);
+        localStorage.setItem('NamaPetugas', NamaPetugas);
+        localStorage.setItem('pilihJurusan', pilihJurusan);
+        localStorage.setItem('pilihKelas', pilihKelas);
+        localStorage.setItem('NoHp', NoHp);
+        localStorage.setItem('nik', nik);
+        localStorage.setItem('namaBarang', namaBarang);
+        localStorage.setItem('jenisbarang', jenisbarang);
+        localStorage.setItem('jumlahBarang', jumlahBarang);
+        localStorage.setItem('JenisKelamin', JenisKelamin);
+        localStorage.setItem('jamPeminjaman', jamPeminjaman);
+        localStorage.setItem('jamPengembalian', jamPengembalian);
+        localStorage.setItem('matapelajaran', matapelajaran);
+        window.location.href = 'output.html';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventaris Sekolah</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="Style.css">
+<style>
+   /* buat Navbar */
+.navbar {
+    background-color: rgba(13, 13, 14, 0.8); 
+}
+.navbar-nav .nav-link {
+color: white; 
+transition: color 0.3s; 
+}
+.navbar-nav .nav-link:hover {
+    color: #ffcc00; 
+}
+.custom-toggler {
+    border: 2px solid transparent; 
+    border-radius: 5px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 10px; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+.custom-toggler:hover {
+    border: 2px solid #ffcc00; 
+    background-color: rgba(255, 204, 0, 0.2);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: none; 
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000000; 
+    position: relative;
+}
+.custom-toggler .navbar-toggler-icon::before,
+.custom-toggler .navbar-toggler-icon::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.custom-toggler .navbar-toggler-icon::before {
+    top: -8px; 
+}
+.custom-toggler .navbar-toggler-icon::after {
+    top: 8px; 
+}
+.produk-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.produk-card {
+    width: 18rem; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.produk-card:hover {
+    transform: translateY(-10px);
+}
+
+        .produk-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .produk-card h3 {
+            margin: 15px 0;
+            font-size: 1.25rem;
+        }
+
+        .produk-card button {
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .produk-card button:hover {
+            background-color: #3a3838;
+        }
+        body {
+    background-color: #ffffff; 
+}
+
+    </style>
+</head>
+<body>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Barang</a>
+            
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./page/Home.html" style="margin-left: 10%;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page/Kontak.html">Kontak Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page/Kritik&Saran.html">Kritik dan Saran</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Pilih yang Anda butuhkan:</h2>
+        <div class="produk-container">
+            <div class="produk-card">
+                <img src="asset/th 1.jpg" alt="Barang Non Konduktor">
+                <h3>Barang Non Konduktor</h3>
+                <button onclick="window.location.href='../List/List_barang1.html'">Pilih</button>
+            </div>
+
+            <div class="produk-card">
+                <img src="asset/10_Speaker_Komputer_Terbaik_untuk_Dibeli.jpg" alt="Barang Konduktor"> <br><br><br><br><br>
+                <h3>Barang Konduktor</h3>
+                <button onclick="window.location.href='./List/List_barang2.html'">Pilih</button>
+            </div>
+
+            <div class="produk-card">
+                <img src="asset/yt.webp" alt="Barang Elektronik"><br><br><br><br><br>               
+                <h3>Barang Elektronik</h3>
+                <button onclick="window.location.href='./List/List_barang3.html'">Pilih</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
